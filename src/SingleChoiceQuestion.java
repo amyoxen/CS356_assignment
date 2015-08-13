@@ -8,8 +8,9 @@ public class SingleChoiceQuestion extends Question {
 		super(title);
 	}
 	
-	//overload the acceptAnswers method, with SingleChoiceQuestion type.
+	//override the acceptAnswers method, with SingleChoiceQuestion type.
 	//Only the last choice of a submission is accepted.
+	@override 
 	public void registerAnswers(Map <String, int[]> voteResult, Student student){		
 					int [] tempHolder =student.submitAnswer();
 					int [] singleAnswerHolder = new int[1];

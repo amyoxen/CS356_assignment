@@ -22,7 +22,7 @@ public class SimulationDriver {
 					.addCandidatedAnswer("d. grapefruit");
 		
 		//Initialize the maximum allowable size of answer entries.
-		int randomUpperLimit = question1.getCondidatedAnswers().length;
+		int randomUpperLimit = question2.getCondidatedAnswers().length;
 		
 		//Generate fixed number of random answer entries. Answer entry length may vary.
 		int[][] choices = new int[NUMBER_OF_SIMULATION][];
@@ -39,7 +39,7 @@ public class SimulationDriver {
 		}
 		
 		//Initialize IvoteService and accept student answers.
-		IVoteService voteService = new IVoteService(question1);
+		IVoteService voteService = new IVoteService(question2);
 		for (int i=0; i<NUMBER_OF_SIMULATION; i++){
 			voteService.acceptAnswers(studentArray[i]);
 		}

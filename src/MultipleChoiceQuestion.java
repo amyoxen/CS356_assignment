@@ -8,7 +8,8 @@ public class MultipleChoiceQuestion extends Question {
 			super(title);
 		}
 		
-		//overload the acceptAnswers method, with MultipleChoiceQuestion type.
+		//override the acceptAnswers method, with MultipleChoiceQuestion type.
+		@override 
 		public void registerAnswers(Map <String, int[]> voteResult, Student student){
 			voteResult.put(student.getID(), student.submitAnswer());
 		}

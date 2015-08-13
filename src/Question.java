@@ -48,7 +48,7 @@ public abstract class Question {
 		return trimmedAnswers;
 	}
 	
-	//to be overload method
+	//to be override method
 	public void registerAnswers(Map <String, int[]> voteResult, Student student){
 	}
 	
