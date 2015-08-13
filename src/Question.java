@@ -1,3 +1,5 @@
+import java.util.Map;
+
 //The Question class consists of title and candidate answers as string array.
 //The acceptable candidate answers are up to ten.
 
@@ -45,4 +47,9 @@ public abstract class Question {
 		}
 		return trimmedAnswers;
 	}
+	
+	//to be overload method
+	public void registerAnswers(Map <String, int[]> voteResult, Student student){
+	}
+	
 }

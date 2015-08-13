@@ -10,22 +10,14 @@ public class IVoteService {
 	private Map <String, int[]> voteResult = new HashMap <String, int[]>();
 	private Question questionForVote;
 	
-	//overload the acceptAnswers method, with MultipleChoiceQuestion type.
-	public void acceptAnswers (MultipleChoiceQuestion question, Student student){
-		voteResult.put(student.getID(), student.submitAnswer());
+	//configure the IVoteService by a Question type parameter.
+	public IVoteService(Question question){
 		questionForVote = question;
 	}
 	
-	//overload the acceptAnswers method, with SingleChoiceQuestion type.
-	//Only the last choice of a submission is accepted.
-	public void acceptAnswers(SingleChoiceQuestion question, Student student){
-				int [] tempHolder =student.submitAnswer();
-				int [] singleAnswerHolder = new int[1];
-				
-				//Hold the last choice of a submission, then put into the Hashmap.
-				singleAnswerHolder[0] = tempHolder[tempHolder.length-1];				
-				voteResult.put(student.getID(), singleAnswerHolder);		
-				questionForVote = question;
+	//Accept the student answers by calling the Question method.
+	public void acceptAnswers (Student student){
+		questionForVote.registerAnswers(voteResult, student);
 	}
 	
 	public void displayStats () {

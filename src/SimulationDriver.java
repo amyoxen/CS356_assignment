@@ -39,9 +39,9 @@ public class SimulationDriver {
 		}
 		
 		//Initialize IvoteService and accept student answers.
-		IVoteService voteService = new IVoteService();
+		IVoteService voteService = new IVoteService(question1);
 		for (int i=0; i<NUMBER_OF_SIMULATION; i++){
-			voteService.acceptAnswers(question1, studentArray[i]);
+			voteService.acceptAnswers(studentArray[i]);
 		}
 		
 		//Call the display method.
